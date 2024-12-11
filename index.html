@@ -57,27 +57,64 @@
         </div>
         <div class="row">
             
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <img width="50%" src="https://eladvergamer.wordpress.com/wp-content/uploads/2013/11/mk_logo.png" alt="">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <img width="75%" src="https://www.programacionytecnologia.com/images_articles/csharp.png">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <img width="50%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/1200px-Python.svg.png">
             </div>
-            
-            
         </div>
+        <div class="row">
+            <div class="col-md-4" id = "color1">
+                <p>Div de prueba 1</p>
+            </div>
+            <div class="col-md-4" id = "color2">
+                <p>Div de prueba 2</p>
+            </div>
+            <div class="col-md-4" id = "color3">
+                <p>Div de prueba 3</p>
+            </div>
+        </div>
+        <button class="btn btn-outline-success" onclick="cambiarColor('color1', 'color2', 'color3', 'green')">Cambiar Color 1</button>
+        <button class="btn btn-outline-danger" onclick="cambiarColor('color2', 'color1', 'color3', 'red')">Cambiar Color 2</button>
+        <button class="btn btn-outline-warning" onclick="cambiarColor('color3', 'color1', 'color2', 'orange')">Cambiar color 3</button>
+        <br>
+        <br>
+
         <div class = "btn-group" role = "group">
+            <button class = 'btn btn-outline-success' onclick="showMessage()">Aceptar</button>
             <a class = "btn btn-outline-success" href = 'https://www.facebook.com/angelvicente.gonzalezcarrion'>Click me</a>
             <a class = "btn btn-outline-danger" href = 'https://angelgonzalez01.github.io/Curriculum/'>Regresar</a>
+            <button class="btn btn-outline-primary" onclick="cambiarContenido()">Cambiar contenido</button>
         </div>
     </main>
     <footer class="footer">
         <p>© 2024 Angel Vicente González Carrión. Todos los derechos reservados.</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        function showMessage() {
+            alert("Haz presionado el boton aceptar");
+        }
+
+        function cambiarContenido() {
+            const texto = document.querySelector('.card-body');  //Sirve para atrapar elementos por su clase
+            texto.textContent = "Este es el nuevo contenido generado desde JS";
+        }
+
+        function cambiarColor(idElemento, idElemento2, idElemento3, color) {
+            const d = document.getElementById(idElemento);
+            const a = document.getElementById(idElemento2);
+            const b = document.getElementById(idElemento3);
+            d.style.backgroundColor = color;
+            a.style.backgroundColor = "transparent";
+            b.style.backgroundColor = "transparent";
+        }
+    </script>
 </body>
 
 </html>
